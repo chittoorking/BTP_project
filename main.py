@@ -116,7 +116,8 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       T_j5_t = st.number_input("T_j5_t -0.025 to 0.129", min_value=-0.025, max_value=0.129, step=0.00001)
       T_j6_t = st.number_input("T_j6_t -1.98 to -1.94", min_value=-1.98, max_value=-1.94, step=0.00001)
       T_j7_t = st.number_input("T_j7_t -0.3 to 0.0", min_value=-0.3, max_value=0.0, step=0.00001)
-      pca_df=pd.DataFrame([[P_j1_t,P_j2_t,P_j3_t,P_j4_t,P_j5_t,P_j6_t,P_j7_t,V_j1_t,V_j2_t,V_j3_t,V_j4_t,V_j5_t,V_j6_t,V_j7_t,T_j1_t,T_j2_t,T_j3_t,T_j4_t,T_j5_t,T_j6_t,T_j7_t]],columns=["P_j1_t","P_j2_t","P_j3_t","P_j4_t","P_j5_t","P_j6_t","P_j7_t","V_j1_t","V_j2_t","V_j3_t","V_j4_t","V_j5_t","V_j6_t","V_j7_t","T_j1_t","T_j2_t","T_j3_t","T_j4_t","T_j5_t","T_j6_t","T_j7_t"])
+      pca_np=np.array([P_j1_t,P_j2_t,P_j3_t,P_j4_t,P_j5_t,P_j6_t,P_j7_t,V_j1_t,V_j2_t,V_j3_t,V_j4_t,V_j5_t,V_j6_t,V_j7_t,T_j1_t,T_j2_t,T_j3_t,T_j4_t,T_j5_t,T_j6_t,T_j7_t])
+      pca_df=pd.DataFrame(pca_np,columns=["P_j1_t","P_j2_t","P_j3_t","P_j4_t","P_j5_t","P_j6_t","P_j7_t","V_j1_t","V_j2_t","V_j3_t","V_j4_t","V_j5_t","V_j6_t","V_j7_t","T_j1_t","T_j2_t","T_j3_t","T_j4_t","T_j5_t","T_j6_t","T_j7_t"])
       submit = st.button('Predict')
       if submit:
           principalComponents=pcaLoaded(pca_df)
