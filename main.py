@@ -119,9 +119,9 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       submit = st.button('Predict')
 
       if submit:
-	    pca_df=pd.DataFrame([P_j1_t,P_j2_t,P_j3_t,P_j4_t,P_j5_t,P_j6_t,P_j7_t,V_j1_t,V_j2_t,V_j3_t,V_j4_t,V_j5_t,V_j6_t,V_j7_t, T_j1_t,T_j2_t,T_j3_t,T_j4_t,T_j5_t,T_j6_t,T_j7_t],columns=["P_j1_t","P_j2_t","P_j3_t","P_j4_t","P_j5_t","P_j6_t","P_j7_t","V_j1_t","V_j2_t","V_j3_t","V_j4_t","V_j5_t","V_j6_t","V_j7_t","T_j1_t","T_j2_t","T_j3_t","T_j4_t","T_j5_t","T_j6_t","T_j7_t"])
-	    principal_components=pca.transform(pca_df)
-	    st.write('Principal components',principal_components)
+	  pca_df=pd.DataFrame([P_j1_t,P_j2_t,P_j3_t,P_j4_t,P_j5_t,P_j6_t,P_j7_t,V_j1_t,V_j2_t,V_j3_t,V_j4_t,V_j5_t,V_j6_t,V_j7_t, T_j1_t,T_j2_t,T_j3_t,T_j4_t,T_j5_t,T_j6_t,T_j7_t],columns=["P_j1_t","P_j2_t","P_j3_t","P_j4_t","P_j5_t","P_j6_t","P_j7_t","V_j1_t","V_j2_t","V_j3_t","V_j4_t","V_j5_t","V_j6_t","V_j7_t","T_j1_t","T_j2_t","T_j3_t","T_j4_t","T_j5_t","T_j6_t","T_j7_t"])
+	  principal_components=pca.transform(pca_df)
+	  st.write('Principal components',principal_components)
 
 
 elif add_selectbox == 'Team':
