@@ -122,10 +122,7 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       if submit:
 	principal_components=pca.transform(pca_df)
 	st.write('Principal components',principal_components)
-#             prediction = regressor.predict(principal_components)
-#             st.write('Hi',name,'The predicted parameters are',prediction)
-#             anomaly=anomaly_detection.predict(prediction)
-#             st.write('Anomaly Status',prediction)
+
 
 elif add_selectbox == 'Team':
     
