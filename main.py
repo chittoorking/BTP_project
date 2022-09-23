@@ -115,7 +115,7 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       T_j4_t = st.number_input("T_j4_t -0.28 to -0.1", min_value=-0.28, max_value=-0.1, step=0.00001)
       T_j5_t = st.number_input("T_j5_t -0.025 to 0.129", min_value=-0.025, max_value=0.129, step=0.00001)
       T_j6_t = st.number_input("T_j6_t -1.98 to -1.94", min_value=-1.98, max_value=-1.94, step=0.00001)
-      T_j7_t = st.number_input("T_j7_t -0.3 to 0", min_value=-0.3, max_value=0, step=0.00001)
+      T_j7_t = st.number_input("T_j7_t -0.3 to 0.0", min_value=-0.3, max_value=0.0, step=0.00001)
       submit = st.button('Predict')
 
       if submit:
