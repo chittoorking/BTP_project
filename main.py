@@ -120,8 +120,8 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       submit = st.button('Predict')
 
       if submit:
-	principal_components=pca.transform(pca_df)
-	st.write('Principal components',principal_components)
+	principalComponents=pca.transform(pca_df)
+	st.write('Principal components',principalComponents)
 
 
 elif add_selectbox == 'Team':
