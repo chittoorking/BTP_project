@@ -87,12 +87,12 @@ if add_selectbox == 'About':
 elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
 	
       st.subheader('FINAL PARAMETERS PREDICTION')
-      pickle_in = open("https://github.com/chittoorking/BTP_project/blob/main/Deployment/model.pkl", 'rb')
+      pickle_in = open("model", 'rb')
       regressor = pickle.load(pickle_in)
-      pca_in= open('https://github.com/chittoorking/BTP_project/blob/main/Deployment/pca.pkl','rb')
+      pca_in= open('pca','rb')
       pca = pickle.load(pca_in)
       st.markdown("## final values prediction ")
-      anomaly_in=open('https://github.com/chittoorking/BTP_project/blob/main/Deployment/clf_model.pkl','rb')
+      anomaly_in=open('clf_model','rb')
       anomaly_detection=pickle.load(anomaly_in)
       name = st.text_input("Name:")
       P_j1_t = st.number_input("P_j1_t 0.07 to 0.08", min_value=0.07, max_value=0.08, step=0.00001)
