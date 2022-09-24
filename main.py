@@ -123,9 +123,9 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
           st.subheader('Principal Components')
           st.write(principalComponents)
           prediction = regressor.predict(principalComponents)
-          st.write('Hi',name,'The predicted parameters are',prediction)
-#           anomaly=anomaly_detection.predict(prediction)
-#           st.write('Anomaly Status',prediction)
+          st.subheader('Hi',name,'The predicted parameters are',prediction)
+          anomaly=anomaly_detection.predict(prediction)
+          st.write('Anomaly Status',prediction)
 
 elif add_selectbox == 'Team':
     
