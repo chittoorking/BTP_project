@@ -68,7 +68,7 @@ st.markdown(
 )
 
 
-st.sidebar.markdown('<h1 style="margin-left:8%; color:#FA8072">Bike Sharing Prediction</h1>', unsafe_allow_html=True)
+st.sidebar.markdown('<h1 style="margin-left:8%; color:#FA8072">Anomaly Prediction</h1>', unsafe_allow_html=True)
 
 add_selectbox = st.sidebar.radio(
     "",
