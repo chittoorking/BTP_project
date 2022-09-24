@@ -88,8 +88,8 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       st.subheader('FINAL PARAMETERS PREDICTION')
       pcaIn= open('pca.pkl','rb')
       pcaLoaded = pickle.load(pcaIn)
-#       pickle_in = open('model', 'rb')
-#       regressor = pickle.load(pickle_in)
+      pickle_in = open('model', 'rb')
+      regressor = pickle.load(pickle_in)
 #       anomaly_in=open('clf_model','rb')
 #       anomaly_detection=pickle.load(anomaly_in)
       st.markdown("## final values prediction ")
@@ -122,6 +122,11 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
           principalComponents=pcaLoaded.transform(pca_df)
           st.subheader('Principal Components')
           st.write(principalComponents)
+          prediction = regressor.predict(principal_components)
+          st.write('Hi',name,'The predicted parameters are',prediction)
+#           anomaly=anomaly_detection.predict(prediction)
+#           st.write('Anomaly Status',prediction)
+
 elif add_selectbox == 'Team':
     
     st.subheader('Teamates')
