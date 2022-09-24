@@ -85,10 +85,14 @@ if add_selectbox == 'About':
     st.markdown('We are predicting the final positions and velocities based on positions , velocities and torques and predicting any anomalies that might could happen',unsafe_allow_html=True)
     
 elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
-	
+      # load wine dataset
+      dataset = pd.read_csv("https://raw.githubusercontent.com/chittoorking/BTP_project/main/pca_train_data.csv")
+      pca=PCA(n_components=3)
+      #Fitting the pca to the data_df
+      pc=pca.fit_transform(dataset.iloc[:,0:21])
       st.subheader('FINAL PARAMETERS PREDICTION')
-      pcaIn= open('pca.pkl','rb')
-      pcaLoaded = pickle.load(pcaIn)
+#       pcaIn= open('pca.pkl','rb')
+#       pcaLoaded = pickle.load(pcaIn)
 #       pickle_in = open('model', 'rb')
 #       regressor = pickle.load(pickle_in)
 #       anomaly_in=open('clf_model','rb')
@@ -120,7 +124,7 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       pca_df=pd.DataFrame(pca_np,columns=["P_j1_t","P_j2_t","P_j3_t","P_j4_t","P_j5_t","P_j6_t","P_j7_t","V_j1_t","V_j2_t","V_j3_t","V_j4_t","V_j5_t","V_j6_t","V_j7_t","T_j1_t","T_j2_t","T_j3_t","T_j4_t","T_j5_t","T_j6_t","T_j7_t"])
       submit = st.button('Predict')
       if submit:
-          principalComponents=pcaLoaded.predict(pca_df)
+          principalComponents=pc.transform(pca_df)
           st.write('Principal components',principalComponents)
 elif add_selectbox == 'Team':
     
