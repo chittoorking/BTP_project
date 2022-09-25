@@ -8,9 +8,8 @@ import keras
 import tensorflow
 from keras.layers import Dense
 from keras.models import Sequential
-from sklearn.ensemble import RandomForestRegressor
 import pickle
-from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
 st.set_page_config(
     page_title="Digital Twin Manufacturing using Data Analytics",
     layout="wide",
@@ -88,9 +87,9 @@ elif add_selectbox == 'Output parameters prediction and Anomaly Prediction':
       st.subheader('FINAL PARAMETERS PREDICTION')
       pcaIn= open('pca.pkl','rb')
       pcaLoaded = pickle.load(pcaIn)
-      pickle_in = open('model', 'rb')
+      pickle_in = open('model.pkl', 'rb')
       regressor = pickle.load(pickle_in)
-      anomaly_in=open('clf_model','rb')
+      anomaly_in=open('clf_model.pkl','rb')
       anomaly_detection=pickle.load(anomaly_in)
       st.markdown("## final values prediction ")
       name = st.text_input("Name:")
